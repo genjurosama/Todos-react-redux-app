@@ -1,0 +1,19 @@
+$tableWidth: 200px;
+$colWidth:20%;
+$buttonMargin:5px;
+$textInputHeight:10%;
+table{
+    border: 1px solid black;
+    table-layout: fixed;
+    width: $tableWidth;
+}
+
+th, td {
+    width: $colWidth;
+}
+
+.marginedButton
+{
+    margin:$buttonMargin;
+}
+
