@@ -17,14 +17,14 @@ export const fetchTasks = function() {
   };
 };
 
-export const fetchProductsSucceeded = function(tasks) {
+export const fetchTasksSucceeded = function(tasks) {
   return {
     type: TASKS_FETCH_SUCCEEDED,
     tasks: tasks
   };
 };
 
-export const fetchProductsFailed = function(message) {
+export const fetchTasksFailed = function(message) {
   return {
     type: TASKS_FETCH_FAILED,
     payload: message
@@ -32,7 +32,6 @@ export const fetchProductsFailed = function(message) {
 };
 
 export const addTask = function(task) {
-  console.log('ading :',task);
   return {
     type: TASK_ADD,
     task: task
@@ -55,7 +54,7 @@ export const taskAddFailed = function(message) {
 export const deleteTask = function(id) {
   return {
     type: TASK_DELETE,
-    id:id
+    id: id
   };
 };
 
@@ -72,12 +71,11 @@ export const taskDeleteFailed = function(message) {
   };
 };
 
-
-export const editTask = function(id,title,description) {
+export const editTask = function(id, title, description) {
   return {
     type: TASK_EDIT,
-    id:id,
-    task:{title,description}
+    id: id,
+    task: { title, description }
   };
 };
 

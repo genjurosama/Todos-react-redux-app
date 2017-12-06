@@ -8,7 +8,7 @@ export const TasksList = ({ tasks, showEditPage, deleteTask }) => {
       {tasks.length === 0 ? (
         <span>No Tasks</span>
       ) : (
-        <Table className="tasks"  striped bordered condensed hover>
+        <Table className="tasks" striped bordered condensed hover>
           <tr>
             <th>Title</th>
             <th>Description</th>

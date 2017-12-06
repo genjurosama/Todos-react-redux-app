@@ -41,6 +41,7 @@ export function deleteTskApi(id) {
 function* fetchTasks() {
   try {
     const response = yield call(fetchTskApi);
+
     yield put({ type: TASKS_FETCH_SUCCEEDED, tasks: response.data.tasks });
   } catch (e) {
     yield put({ type: TASKS_FETCH_FAILED, message: e.message });

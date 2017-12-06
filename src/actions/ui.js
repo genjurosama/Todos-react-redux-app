@@ -8,7 +8,7 @@ export const EDIT_DESCRIPTION = "EDIT_DESCRIPTION";
 export const showModal = function(data) {
   return {
     type: SHOW_MODAL,
-    task:data
+    task: data
   };
 };
 
@@ -18,34 +18,29 @@ export const hideModal = function() {
   };
 };
 
-
 export const setTitle = function(value) {
-  console.log('title:',value);
   return {
     type: SET_TITLE,
-    title:value
+    title: value
   };
 };
-
 
 export const setDescription = function(value) {
   return {
     type: SET_DESCRIPTION,
-    description:value
+    description: value
   };
 };
 export const editTitle = function(value) {
-  console.log('title:',value);
   return {
     type: EDIT_TITLE,
-    title:value
+    title: value
   };
 };
-
 
 export const editDescription = function(value) {
   return {
     type: EDIT_DESCRIPTION,
-    description:value
+    description: value
   };
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import UpdateTask from '../containers/updateTask.jsx'
+import UpdateTask from "../containers/updateTask.jsx";
 import {
   Grid,
   Navbar,
@@ -15,8 +15,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
 import "font-awesome/css/font-awesome.min.css";
 
-
-
 const NavBar = () => {
   return (
     <div>
@@ -29,7 +27,7 @@ const NavBar = () => {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-          <UpdateTask/>
+            <UpdateTask />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

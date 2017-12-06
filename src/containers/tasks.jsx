@@ -22,12 +22,17 @@ class Tasks extends Component {
       description: this.props.description
     });
   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
+  }
   render() {
     return (
       <div>
         <div className="row">
           <div className="col-md-3">
-            <Input maxlength={20}
+            <Input
+              maxlength={20}
               className="titleInput"
               placeholder="Add Title.."
               value={this.props.title}
@@ -38,7 +43,7 @@ class Tasks extends Component {
           </div>
           <div className="col-md-3">
             <Input
-             className="DescInput"
+              className="DescInput"
               multiline
               placeholder="Add Description.."
               value={this.props.description}
