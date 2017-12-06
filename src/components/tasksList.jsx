@@ -2,20 +2,18 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import { Task } from "../components/task.jsx";
 import { Button } from "travix-ui-kit";
-import "travix-ui-kit/_site/ui-bundle.css";
-import "travix-ui-kit/_site/theme.css";
 export const TasksList = ({ tasks, showEditPage, deleteTask }) => {
   return (
     <div>
       {tasks.length === 0 ? (
         <span>No Tasks</span>
       ) : (
-        <Table  striped bordered condensed hover>
-          <thead>
+        <Table className="tasks"  striped bordered condensed hover>
+          <tr>
             <th>Title</th>
             <th>Description</th>
             <th>Actions</th>
-          </thead>
+          </tr>
           <tbody>
             {tasks.map(task => {
               return (

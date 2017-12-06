@@ -28,6 +28,7 @@ class Tasks extends Component {
         <div className="row">
           <div className="col-md-3">
             <Input maxlength={20}
+              className="titleInput"
               placeholder="Add Title.."
               value={this.props.title}
               onChange={(e, value) => {
@@ -37,6 +38,7 @@ class Tasks extends Component {
           </div>
           <div className="col-md-3">
             <Input
+             className="DescInput"
               multiline
               placeholder="Add Description.."
               value={this.props.description}
@@ -47,6 +49,7 @@ class Tasks extends Component {
           </div>
           <div className="col-md-6">
             <Button
+              className="addButton"
               type="button"
               size="m"
               onClick={() => this.handleClick()}
