@@ -1,3 +1,7 @@
+/**
+ * Simple action creators for UID operations (pure functions)
+ */
+
 export const SHOW_MODAL = "SHOW_MODAL";
 export const HIDE_MODAL = "HIDE_MODAL";
 export const SET_TITLE = "SET_TITLE";

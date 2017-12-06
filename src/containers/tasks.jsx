@@ -78,6 +78,12 @@ class Tasks extends Component {
   }
 }
 
+/**
+ * 
+ * @param {*} state
+ * @returns {Object} of mapped state fields to component props 
+ */
+
 function mapStateToProps(state) {
   return {
     tasks: state.tasksReducer.tasks || [],
@@ -86,6 +92,12 @@ function mapStateToProps(state) {
     disableButton: !!!state.uiReducer.title
   };
 }
+
+/**
+ * 
+ * @param {*} dispatch
+ * binds actions with dispatch object and makes them accessible from component props
+ */
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators(

@@ -1,3 +1,7 @@
+/**
+ * The main redux-sagas logic for Tasks CRUD operations
+ */
+
 import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
 import { getTasks } from "../api/tasks";
 import axios from "axios";
@@ -17,9 +21,16 @@ import {
 } from "./tasks";
 import { HIDE_MODAL } from "./ui";
 
+/**
+ * will return a promise for tasks fetch
+ */
 export function fetchTskApi() {
   return axios.get("http://localhost:9001/tasks");
 }
+
+/**
+ * will return a promise for task add
+ */
 
 export function addTskApi(task) {
   return axios.post("http://localhost:9001/task/create", {
@@ -28,15 +39,27 @@ export function addTskApi(task) {
   });
 }
 
+/**
+ * will return a promise for task edit
+ */
+
 export function editTskApi(id, task) {
   return axios.put(
     `http://localhost:9001/task/update/${id}/${task.title}/${task.description}`
   );
 }
 
+/**
+ * will return a promise for task delete
+ */
+
 export function deleteTskApi(id) {
   return axios.delete(`http://localhost:9001/task/delete/${id}`);
 }
+
+/**
+ * Generator function used by triggered by TASKS_FETCH_REQUESTED action type
+ */
 
 function* fetchTasks() {
   try {
@@ -47,6 +70,10 @@ function* fetchTasks() {
     yield put({ type: TASKS_FETCH_FAILED, message: e.message });
   }
 }
+
+/**
+ * Generator function used by triggered by TASK_ADD action type
+ */
 
 function* addTask(action) {
   try {
@@ -59,6 +86,10 @@ function* addTask(action) {
   }
 }
 
+/**
+ * Generator function used by triggered by TASK_EDIT action type
+ */
+
 function* editTask(action) {
   try {
     const response = yield call(editTskApi, action.id, action.task);
@@ -69,6 +100,9 @@ function* editTask(action) {
     yield put({ type: TASK_EDIT_FAILED, message: e.message });
   }
 }
+/**
+ * Generator function used by triggered by TASK_DELETE action type
+ */
 
 function* deleteTask(action) {
   try {
@@ -79,6 +113,10 @@ function* deleteTask(action) {
     yield put({ type: TASK_DELETE_FAILED, message: e.message });
   }
 }
+
+/**
+ * will interscept ever action type dispatched by the store and fire the appropriate generator function
+ */
 
 function* mySaga() {
   yield takeEvery(TASKS_FETCH_REQUESTED, fetchTasks);

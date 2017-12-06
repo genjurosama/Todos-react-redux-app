@@ -1,3 +1,6 @@
+/**
+ * A simple Task Component
+ */
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Input } from "travix-ui-kit";

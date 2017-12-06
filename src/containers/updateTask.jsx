@@ -68,6 +68,12 @@ class UpdateTask extends Component {
   }
 }
 
+/**
+ * 
+ * @param {*} state
+ * @returns {Object} of mapped state fields to component props 
+ */
+
 function mapStateToProps(state) {
   const incoming = state.uiReducer;
   return {
@@ -79,6 +85,14 @@ function mapStateToProps(state) {
   };
 }
 
+
+/**
+ * 
+ * @param {*} dispatch
+ * binds actions with dispatch object and makes them accessible from component props
+ */
+
+ 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators(
     {

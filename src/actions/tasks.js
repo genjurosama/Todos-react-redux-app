@@ -1,3 +1,6 @@
+/**
+ * Simple action creators (pure functions)
+ */
 export const TASKS_FETCH_REQUESTED = "TASKS_FETCH_REQUESTED";
 export const TASKS_FETCH_SUCCEEDED = "TASKS_FETCH_SUCCEEDED";
 export const TASKS_FETCH_FAILED = "TASKS_FETCH_FAILED";

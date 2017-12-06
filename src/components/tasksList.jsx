@@ -20,7 +20,6 @@ export const TasksList = ({ tasks, showEditPage, deleteTask }) => {
                 <tr>
                   <Task id={task.id} task={task} />
                   <td>
-                    {" "}
                     <Button
                       type="button"
                       size="m"

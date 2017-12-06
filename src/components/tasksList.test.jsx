@@ -1,3 +1,6 @@
+/**
+ * A simple test to check if the TasksList Component renders with the render amount of elements
+ */
 import { TasksList } from "./tasksList.jsx";
 import React from "react";
 import Enzyme, { mount, shallow } from "enzyme";
