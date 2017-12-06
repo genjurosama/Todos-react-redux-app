@@ -31,7 +31,7 @@ To run the front end
 ```
 npm start
 ```
-To run Tests
+
 
 
 ## Running the tests
