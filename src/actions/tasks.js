@@ -1,18 +1,19 @@
 /**
+ * @flow
  * Simple action creators (pure functions)
  */
-export const TASKS_FETCH_REQUESTED = "TASKS_FETCH_REQUESTED";
-export const TASKS_FETCH_SUCCEEDED = "TASKS_FETCH_SUCCEEDED";
-export const TASKS_FETCH_FAILED = "TASKS_FETCH_FAILED";
-export const TASK_ADD = "TASK_ADD";
-export const TASK_ADD_SUCCEEDED = "TASK_ADD_SUCCEEDED";
-export const TASK_ADD_FAILED = "TASK_ADD_FAILED";
-export const TASK_DELETE = "TASK_DELETE";
-export const TASK_DELETE_SUCCEEDED = "TASK_DELETE_SUCCEEDED";
-export const TASK_DELETE_FAILED = "TASK_DELETE_FAILED";
-export const TASK_EDIT = "TASK_EDIT";
-export const TASK_EDIT_SUCCEEDED = "TASK_EDIT_SUCCEEDED";
-export const TASK_EDIT_FAILED = "TASK_EDIT_FAILED";
+export const TASKS_FETCH_REQUESTED = 'TASKS_FETCH_REQUESTED';
+export const TASKS_FETCH_SUCCEEDED = 'TASKS_FETCH_SUCCEEDED';
+export const TASKS_FETCH_FAILED = 'TASKS_FETCH_FAILED';
+export const TASK_ADD = 'TASK_ADD';
+export const TASK_ADD_SUCCEEDED = 'TASK_ADD_SUCCEEDED';
+export const TASK_ADD_FAILED = 'TASK_ADD_FAILED';
+export const TASK_DELETE = 'TASK_DELETE';
+export const TASK_DELETE_SUCCEEDED = 'TASK_DELETE_SUCCEEDED';
+export const TASK_DELETE_FAILED = 'TASK_DELETE_FAILED';
+export const TASK_EDIT = 'TASK_EDIT';
+export const TASK_EDIT_SUCCEEDED = 'TASK_EDIT_SUCCEEDED';
+export const TASK_EDIT_FAILED = 'TASK_EDIT_FAILED';
 
 export const fetchTasks = function() {
   return {

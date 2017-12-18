@@ -1,9 +1,9 @@
 /**
+ * @flow
  * The main redux-sagas logic for Tasks CRUD operations
  */
 
-import { call, put, takeEvery, takeLatest } from "redux-saga/effects";
-import { getTasks } from "../api/tasks";
+import { call, put, takeEvery } from "redux-saga/effects";
 import axios from "axios";
 import {
   TASKS_FETCH_SUCCEEDED,
@@ -24,7 +24,7 @@ import { HIDE_MODAL } from "./ui";
 /**
  * will return a promise for tasks fetch
  */
-export function fetchTskApi() {
+export function fetchTskApi(): Promise {
   return axios.get("http://localhost:9001/tasks");
 }
 
@@ -32,10 +32,13 @@ export function fetchTskApi() {
  * will return a promise for task add
  */
 
-export function addTskApi(task) {
+export function addTskApi(task: {
+  title: string,
+  description: string
+}): Promise {
   return axios.post("http://localhost:9001/task/create", {
     title: task.title,
-    description: task.description
+    description: task.description,
   });
 }
 
@@ -43,7 +46,10 @@ export function addTskApi(task) {
  * will return a promise for task edit
  */
 
-export function editTskApi(id, task) {
+export function editTskApi(
+  id: number,
+  task: { title: string, description: string }
+): Promise {
   return axios.put(
     `http://localhost:9001/task/update/${id}/${task.title}/${task.description}`
   );
@@ -53,7 +59,7 @@ export function editTskApi(id, task) {
  * will return a promise for task delete
  */
 
-export function deleteTskApi(id) {
+export function deleteTskApi(id: number): Promise {
   return axios.delete(`http://localhost:9001/task/delete/${id}`);
 }
 
