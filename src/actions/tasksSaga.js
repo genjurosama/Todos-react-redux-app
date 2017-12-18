@@ -61,10 +61,9 @@ export function deleteTskApi(id) {
  * Generator function used by triggered by TASKS_FETCH_REQUESTED action type
  */
 
-function* fetchTasks() {
+export function* fetchTasks() {
   try {
     const response = yield call(fetchTskApi);
-
     yield put({ type: TASKS_FETCH_SUCCEEDED, tasks: response.data.tasks });
   } catch (e) {
     yield put({ type: TASKS_FETCH_FAILED, message: e.message });
